@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			canvas{
+				border:solid;
+			}
+			img {
+			    transform: scaleX(-1);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="peashooter" src="img/Peashooter.gif" />
+		<canvas width="300" height="300"></canvas>
+		
+		<script>
+			window.addEventListener("load",function(){
+				let cvs=document.querySelector("canvas");
+				let g=cvs.getContext("2d");
+				let p=document.getElementById("peashooter");
+				
+				g.drawImage(p,0,0);
+				
+				//x轴倒置
+				g.scale(-1, 1);
+				g.drawImage(p, 100*-1-p.width, 0);
+				// 坐标参考还原
+				g.scale(-1, 1);
+			});
+			
+			
+			
+		</script>
+	</body>
+</html>
